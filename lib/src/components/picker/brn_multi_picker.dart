@@ -98,12 +98,16 @@ class BrnMultiDataPicker extends StatefulWidget {
 
   BrnPickerConfig? themeData;
 
+  // 自定义标题栏
+  final BrnPickerTitleConfig? pickerTitleConfig;
+
   BrnMultiDataPicker(
       {Key? key,
       required this.context,
       required this.delegate,
       this.title = "",
       this.titleTextStyle,
+      this.pickerTitleConfig,
       this.confirmTextStyle,
       this.cancelTextStyle,
       this.pickerTitles,
@@ -187,7 +191,7 @@ class _BrnMultiDataPickerState extends State<BrnMultiDataPicker> {
   Widget _configHeaderWidget() {
     return BrnPickerTitle(
       themeData: widget.themeData,
-      pickerTitleConfig: BrnPickerTitleConfig(
+      pickerTitleConfig: widget.pickerTitleConfig ?? BrnPickerTitleConfig(
         titleContent: widget.title,
       ),
       onCancel: () {

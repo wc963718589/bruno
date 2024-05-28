@@ -207,8 +207,12 @@ class _BrnDateWidgetState extends State<BrnDateWidget> {
       );
       pickers.add(pickerColumn);
     });
-    return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween, children: pickers);
+    return Container(
+      color: Colors.white,
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween, children: pickers),
+    );
   }
 
   Widget _renderDatePickerColumnComponent({
@@ -221,9 +225,9 @@ class _BrnDateWidgetState extends State<BrnDateWidget> {
       flex: 1,
       child: Container(
         height: widget.themeData!.pickerHeight,
-        decoration: BoxDecoration(color: widget.themeData!.backgroundColor),
         child: BrnPicker.builder(
           backgroundColor: widget.themeData!.backgroundColor,
+          diameterRatio: 1,
           lineColor: widget.themeData!.dividerColor,
           scrollController: scrollCtrl,
           itemExtent: widget.themeData!.itemHeight,

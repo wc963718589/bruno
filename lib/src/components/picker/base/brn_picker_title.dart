@@ -48,7 +48,7 @@ class BrnPickerTitle extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Container(
-            height: themeData!.titleHeight - 0.5,
+            height: themeData!.titleHeight,
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -82,11 +82,6 @@ class BrnPickerTitle extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          Divider(
-            color: themeData!.dividerColor,
-            indent: 0.0,
-            height: 0.5,
           ),
         ],
       ),
