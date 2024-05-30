@@ -215,9 +215,8 @@ class _BrnMultiDataPickerState extends State<BrnMultiDataPicker> {
     return Container(
         height: widget.themeData?.pickerHeight ?? pickerHeight,
         color: widget.themeData?.backgroundColor,
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Container(
-          color: Colors.white,
-          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
               mainAxisSize: MainAxisSize.max,
               children: widget.pickerTitles != null ? _pickersWithTitle() : _pickers()),
