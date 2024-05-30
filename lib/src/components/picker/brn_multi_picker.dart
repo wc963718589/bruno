@@ -101,6 +101,9 @@ class BrnMultiDataPicker extends StatefulWidget {
   // 自定义标题栏
   final BrnPickerTitleConfig? pickerTitleConfig;
 
+  // 数据改变回调
+  final Function(List)? onValueChanged;
+
   BrnMultiDataPicker(
       {Key? key,
       required this.context,
@@ -118,6 +121,7 @@ class BrnMultiDataPicker extends StatefulWidget {
       this.textSelectedColor,
       this.behavior,
       this.confirmClick,
+      this.onValueChanged,
       this.createItemWidget,
       this.themeData,
       this.sync = true}) {
@@ -310,6 +314,7 @@ class _BrnMultiDataPickerState extends State<BrnMultiDataPicker> {
             }
           }
         });
+        widget.onValueChanged?.call(_selectedIndexList);
       },
       scrollBehavior: widget.behavior,
     );
